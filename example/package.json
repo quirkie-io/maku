@@ -1,0 +1,52 @@
+{
+  "name": "@quirkie-io/basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon --exec 'dotenv -- ts-node -r tsconfig-paths/register src/index.ts' --watch src --ext ts",
+    "start:profiling": "yarn build && dotenv -- node dist/index.js",
+    "build": "esbuild ./src/index.ts --platform=node --bundle --minify --keep-names --outfile=dist/index.js --metafile=meta.json --analyze",
+    "format": "biome format --write src",
+    "lint": "biome check src --apply",
+    "test:e2e:start": "vitest run --c vitest.config.e2e.ts --passWithNoTests",
+    "test:e2e": "scripts/run-integration.sh",
+    "db": "ts-node src/infra/modules/orchid-orm/migrations/script.ts",
+    "db:create": "yarn db new ",
+    "db:up": "yarn db migrate",
+    "db:seed": "yarn db seed"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@quirkie-io/amqplib": "*",
+    "@quirkie-io/attempt": "*",
+    "@quirkie-io/inversify": "*",
+    "@quirkie-io/fastest-validator": "*",
+    "@quirkie-io/native": "*",
+    "@quirkie-io/mapper": "*",
+    "@quirkie-io/mediator": "*",
+    "@quirkie-io/orchid-orm": "*",
+    "@quirkie-io/pino": "*",
+    "@quirkie-io/quirkie": "*",
+    "@quirkie-io/redlock": "*",
+    "@quirkie-io/tedis": "*",
+    "@quirkie-io/testing": "*",
+    "@quirkie-io/find-my-way": "*",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.10.2",
+    "@types/node": "^20.8.2",
+    "dotenv": "^16.3.1",
+    "dotenv-cli": "^7.3.0",
+    "esbuild": "^0.19.4",
+    "nodemon": "^3.0.1",
+    "postject": "^1.0.0-alpha.6",
+    "rake-db": "^2.10.62",
+    "supertest": "^6.3.3",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0"
+  }
+}

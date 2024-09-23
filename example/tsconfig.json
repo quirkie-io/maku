@@ -1,0 +1,18 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@app": ["app"],
+      "@domain/*": ["domain/*"],
+      "@domain": ["domain"],
+      "@crosscutting/*": ["infra/crosscutting/*"],
+      "@crosscutting": ["infra/crosscutting"],
+      "@modules/*": ["infra/modules/*"],
+      "@modules": ["infra/modules"]
+    },
+    "outDir": "dist"
+  },
+  "include": ["src/**/*"]
+}
