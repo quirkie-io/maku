@@ -1,4 +1,4 @@
-<img alt="little-date banner" src="https://github.com/quirkie-io/maku/raw/main/.github/banner.png"/>
+<img alt="maku banner" src="https://github.com/quirkie-io/maku/raw/main/.github/banner.png"/>
 
 <div align="center">
     <img src="https://badgen.net/npm/v/makujs?" alt="NPM Version" />
