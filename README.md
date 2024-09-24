@@ -2,7 +2,8 @@
 
 <div align="center">
     <img src="https://badgen.net/npm/v/makujs?" alt="NPM Version" />
-    <img src="https://github.com/quirkie-io/maku/workflows/CI/badge.svg" alt="Build Status" />
+    <img src="https://github.com/quirkie-io/maku/actions/workflows/ci.yaml/badge.svg" alt="Build Status" />
+
 </a>
 </div>
 <br />
